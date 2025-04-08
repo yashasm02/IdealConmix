@@ -27,39 +27,25 @@ body {
     color: #333333;
     line-height: 1.6;
 }
- /*
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.menu-toggle span {
-    height: 3px;
-    width: 25px;
-    background: var(--primary-color);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-*/
-
-
-
-/* Header and Nav */
+/* Header styles with fixed positioning */
 header {
-    background-color: var(--light-color);
-    padding: 1rem 0;
     position: fixed;
-    width: 100%;
     top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header.hide {
     transform: translateY(-100%);
+}
+
+/* Body padding to prevent content hiding under fixed header */
+body {
+    padding-top: 80px; /* Adjust to match your header height */
 }
 
 .container {
@@ -84,53 +70,11 @@ header.hide {
     height: 80px;
     width: auto;
 }
-/* Hide nav-links by default on mobile */
-/* Hide nav-links by default on mobile */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 80px; /* adjust as per your header height */
-    width: 100%;
-    left: 0;
-    padding: 10px 0;
-    z-index: 1000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
 
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-  }
-
-  .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #333;
-    transition: all 0.3s ease-in-out;
-  }
-
-  nav {
+/* Navigation for mobile and desktop */
+nav {
     position: relative;
-  }
 }
-
-/* Hide toggle on desktop */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none;
-  }
-}
-
-
 
 nav ul {
     display: flex;
@@ -152,6 +96,69 @@ nav ul li a {
 
 nav ul li a:hover {
     color: var(--secondary-color);
+}
+
+/* Mobile navigation styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 80px; /* adjust as per your header height */
+        width: 100%;
+        left: 0;
+        padding: 10px 0;
+        z-index: 1000;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* Hamburger menu animation */
+    .menu-toggle .bar.animate:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle .bar.animate:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle .bar.animate:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Hide toggle on desktop */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
 }
 
 /* Hero Section */
@@ -611,16 +618,9 @@ footer {
     .nav-container {
         flex-direction: column;
     }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
-    }
 }
+
+/* Scrollbar customization */
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
@@ -628,10 +628,6 @@ footer {
 ::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
     border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
 }
 .gallery {
 background-color: #f0f0f0;
