@@ -1249,6 +1249,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
 
+   const toggle = document.getElementById('menu-toggle');
+    const nav_Links = document.querySelector('nav ul');
+
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        toggle.classList.toggle('open');
+    });
 
 </script>
 </body>
