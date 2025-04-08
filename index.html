@@ -114,10 +114,21 @@ nav ul li a:hover {
 
 /* Mobile navigation styles */
 @media (max-width: 768px) {
+        nav {
+        background-color: white; /* ✅ Add this */
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    }
+
     .nav-links {
+        background-color: white;
         display: none;
         flex-direction: column;
-        background-color: white;
+        
         position: absolute;
         top: 80px; /* adjust as per your header height */
         width: 100%;
