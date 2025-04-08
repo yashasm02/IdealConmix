@@ -110,11 +110,12 @@ header.hide {
     width: auto;
 }
 /* Hide nav-links by default on mobile */
+/* Hide nav-links by default on mobile */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-     background-color: white;
+    background-color: white;
     position: absolute;
     top: 80px; /* adjust as per your header height */
     width: 100%;
@@ -153,6 +154,8 @@ header.hide {
     display: none;
   }
 }
+
+
 
 nav ul {
     display: flex;
@@ -776,28 +779,29 @@ margin-bottom: 10px;
         </div>
     </header>
     -->
-    <header>
-        <div class="container nav-container">
-          <div class="logo">
+<header>
+    <div class="container nav-container">
+        <div class="logo">
             <img src="images/idealconmixlogo-removebg-preview.png" alt="Ideal Conmix Logo" class="logoo">
-          </div>
-          <div class="menu-toggle" id="mobile-menu">
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-          <nav>
+        <nav>
             <ul id="nav-links" class="nav-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#certification">Certification</a></li>
-              <li><a href="#clients">Clients</a></li>
-              <li><a href="#csr">CSR</a></li>
-              <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#certification">Certification</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#csr">CSR</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-          </nav>
-        </div>
+        </nav>
+    </div>
+</header>
       </header>
  
     <section id="home" class="hero">
@@ -1098,7 +1102,7 @@ margin-bottom: 10px;
         });
     });
     
-    const mobileMenu = document.getElementById('mobile-menu');
+ /*   const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
     const header = document.querySelector('header');
 
@@ -1118,7 +1122,7 @@ margin-bottom: 10px;
         header.classList.remove('hide');
       }
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
+    });*/
     // Simple form validation
     const form = document.querySelector('form');
     if (form) {
@@ -1244,12 +1248,15 @@ lightbox.addEventListener('click', (e) => {
 
 }
 ]
-const menuToggle = document.getElementById('mobile-menu');
-  const nav__Links = document.getElementById('nav-links');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
 
-  menuToggle.addEventListener('click', () => {
-    nav__Links.classList.toggle('show');
-  });
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
+});
+    
 
 </script>
 </body>
