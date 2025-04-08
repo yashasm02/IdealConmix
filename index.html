@@ -125,23 +125,34 @@ nav ul li a:hover {
     }
 
     .nav-links {
-        background-color: white;
-        display: none;
+           display: none;
         flex-direction: column;
-        
+        background-color: #ffffff; /* Ensure background color */
         position: absolute;
         top: 80px; /* adjust as per your header height */
         width: 100%;
         left: 0;
-        padding: 10px 0;
+        padding: 20px 0;
         z-index: 1000;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .nav-links.show {
+     .nav-links.show {
         display: flex;
     }
 
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 10px 0;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
     .menu-toggle {
         display: block;
         cursor: pointer;
@@ -1271,7 +1282,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle functionality
+// Mobile menu toggle functionality
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
