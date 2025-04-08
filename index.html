@@ -109,6 +109,50 @@ header.hide {
     height: 80px;
     width: auto;
 }
+/* Hide nav-links by default on mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 80px; /* adjust as per your header height */
+    width: 100%;
+    left: 0;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav {
+    position: relative;
+  }
+}
+
+/* Hide toggle on desktop */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
 
 nav ul {
     display: flex;
@@ -1206,7 +1250,12 @@ const toggle = document.getElementById('menu-toggle');
         navLinks.classList.toggle('active');
         toggle.classList.toggle('open');
     });
+const menuToggle = document.getElementById('mobile-menu');
+  const nav__Links = document.getElementById('nav-links');
 
+  menuToggle.addEventListener('click', () => {
+    nav__Links.classList.toggle('show');
+  });
 
 </script>
 </body>
