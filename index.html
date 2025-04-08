@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ideal Conmix - Premium Ready Mix Concrete</title>
-    <style>
-  :root {
+    <link rel="stylesheet" href="/Users/yashas.m/Downloads/idea_style.css">
+    <script src="/Users/yashas.m/Downloads/ideal_obb.js"></script>
+<style>
+    :root {
     --primary-color: rgb(60, 42, 152); /* Navy blue */
     --secondary-color: rgb(0, 126, 66); /* Green */
     --accent-color: #3498db;
@@ -80,7 +82,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/glassbuilding.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Users/yashas.m/Downloads/images/glassbuilding.jpg') center/cover no-repeat;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -484,7 +486,7 @@ cursor: pointer;
 /* Update hero background */
 .hero {
 background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-        url('images/glassbuilding.jpg') center/cover no-repeat;
+        url('/Users/yashas.m/Downloads/images/glassbuilding.jpg') center/cover no-repeat;
 /* Rest of the properties remain the same */
 }
 .mv-card h3::after {
@@ -691,17 +693,108 @@ align-items: center;
 .filter-btn {
 margin-bottom: 10px;
 }
-}</style>
-    <script src="ideal_obb.js"></script>
-
+}
+/* Base Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+  
+  .logo img.logoo {
+    height: 60px;
+  }
+  
+  /* Nav Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* Hamburger Menu Icon */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+  
+    nav {
+      width: 100%;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background-color: white;
+      width: 100%;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+  
+    .menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .menu-toggle.active .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  }
+  
+</style>
 </head>
 
 <body>
-    
+    <!--
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <img src="images/idealconmixlogo-removebg-preview.png" alt="Ideal Conmix Logo" class="logoo">
+                <img src="/Users/yashas.m/Downloads/images/idealconmixlogo-removebg-preview.png" alt="Ideal Conmix Logo" class="logoo">
             </div>
             <nav>
                 <ul>
@@ -716,6 +809,30 @@ margin-bottom: 10px;
             </nav>
         </div>
     </header>
+    -->
+    <header>
+        <div class="container nav-container">
+          <div class="logo">
+            <img src="/Users/yashas.m/Downloads/images/idealconmixlogo-removebg-preview.png" alt="Ideal Conmix Logo" class="logoo">
+          </div>
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <nav>
+            <ul id="nav-links" class="nav-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#certification">Certification</a></li>
+              <li><a href="#clients">Clients</a></li>
+              <li><a href="#csr">CSR</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
     <section id="home" class="hero">
         <h1>WE GIVE SOLID SHAPE TO YOUR DREAMS</h1>
@@ -733,7 +850,7 @@ margin-bottom: 10px;
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/rmc plant.jpeg" alt="Ready Mix Concrete Plant">
+                    <img src="/Users/yashas.m/Downloads/images/rmc plant.jpeg" alt="Ready Mix Concrete Plant">
                 </div>
                 <div class="about-text">
                     <h3>Premium Ready Mixed Concrete</h3>
@@ -764,7 +881,7 @@ margin-bottom: 10px;
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="images/truck.jpeg" alt="Ready Mix Concrete">
+                        <img src="/Users/yashas.m/Downloads/images/truck.jpeg" alt="Ready Mix Concrete">
                     </div>
                     <div class="service-content">
                         <h3>Ready Mix Concrete</h3>
@@ -773,7 +890,7 @@ margin-bottom: 10px;
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="images/pumper.jpeg" alt="Concrete Pumping">
+                        <img src="/Users/yashas.m/Downloads/images/pumper.jpeg" alt="Concrete Pumping">
                     </div>
                     <div class="service-content">
                         <h3>Concrete Pumping</h3>
@@ -782,7 +899,7 @@ margin-bottom: 10px;
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="images/id.avif" alt="Concrete Mix Design">
+                        <img src="/Users/yashas.m/Downloads/images/id.avif" alt="Concrete Mix Design">
                     </div>
                     <div class="service-content">
                         <h3>Concrete Mix Design</h3>
@@ -791,7 +908,7 @@ margin-bottom: 10px;
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="images/Hallow-bricks.jpeg" alt="Hollow Bricks">
+                        <img src="/Users/yashas.m/Downloads/images/Hallow-bricks.jpeg" alt="Hollow Bricks">
                     </div>
                     <div class="service-content">
                         <h3>Hollow Bricks</h3>
@@ -811,7 +928,7 @@ margin-bottom: 10px;
             <div class="cert-cards">
                 <div class="cert-card">
                     <div class="cert-logo">
-                        <img src="images/iso.png" alt="ISO 9001:2015 Certificate">
+                        <img src="/Users/yashas.m/Downloads/images/iso.png" alt="ISO 9001:2015 Certificate">
                     </div>
                     <div class="cert-details">
                         <h3>ISO 9001:2015 Certified</h3>
@@ -823,7 +940,7 @@ margin-bottom: 10px;
                 </div>
                 <div class="cert-card">
                     <div class="cert-logo">
-                        <img src="images/quality_certificate.jpeg" alt="Quality Management Certificate">
+                        <img src="/Users/yashas.m/Downloads/images/quality_certificate.jpeg" alt="Quality Management Certificate">
                     </div>
                     <div class="cert-details">
                         <h3>Quality Management Systems</h3>
@@ -900,35 +1017,35 @@ margin-bottom: 10px;
                 
                 <!-- Plant -->
                 <div class="gallery-item" data-category="plant">
-                    <img src="images/plant1.jpeg" alt="Plant 1">
+                    <img src="/Users/yashas.m/Downloads/images/plant1.jpeg" alt="Plant 1">
                     <div class="gallery-caption">RMC Production Facility</div>
                 </div>
                 <div class="gallery-item" data-category="plant">
-                    <img src="images/plant2.jpg" alt="Plant 2">
+                    <img src="/Users/yashas.m/Downloads/images/plant2.jpg" alt="Plant 2">
                     <div class="gallery-caption">Quality Control Laboratory</div>
                 </div>
                 <div class="gallery-item" data-category="plant">
-                    <img src="images/rmc plant.jpeg" alt="Plant 3">
+                    <img src="/Users/yashas.m/Downloads/images/rmc plant.jpeg" alt="Plant 3">
                     <div class="gallery-caption">Batching Plant</div>
                 </div>
                 
                 <!-- Equipment -->
                 <div class="gallery-item" data-category="equipment">
-                    <img src="images/truck.jpeg" alt="Equipment 1">
+                    <img src="/Users/yashas.m/Downloads/images/truck.jpeg" alt="Equipment 1">
                     <div class="gallery-caption">Transit Mixers</div>
                 </div>
                 <div class="gallery-item" data-category="equipment">
-                    <img src="images/pumper2.jpeg" alt="Equipment 2">
+                    <img src="/Users/yashas.m/Downloads/images/pumper2.jpeg" alt="Equipment 2">
                     <div class="gallery-caption">Concrete Pumps</div>
                 </div>
                 <div class="gallery-item" data-category="equipment">
-                    <img src="images/hallow-bricks_maker.png" alt="Equipment 3">
+                    <img src="/Users/yashas.m/Downloads/images/hallow-bricks_maker.png" alt="Equipment 3">
                     <div class="gallery-caption">hallow-bricks maker</div>
                 </div>
                 
                 <!-- Team -->
                 <div class="gallery-item" data-category="team">
-                    <img src="images/team1.jpg" alt="Team 1">
+                    <img src="/Users/yashas.m/Downloads/images/team1.jpg" alt="Team 1">
                     <div class="gallery-caption">Team</div>
                 </div>
                 
@@ -982,7 +1099,7 @@ margin-bottom: 10px;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/idealconmixlogo.jpg" alt="Ideal Conmix Logo">
+                    <img src="/Users/yashas.m/Downloads/images/idealconmixlogo.jpg" alt="Ideal Conmix Logo">
                 </div>
                 <p>Premium Ready Mix Concrete for all your construction needs.</p>
                 <div class="social-links">
@@ -1015,6 +1132,13 @@ margin-bottom: 10px;
         });
     });
     
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
     // Simple form validation
     const form = document.querySelector('form');
     if (form) {
@@ -1024,6 +1148,7 @@ margin-bottom: 10px;
             form.reset();
         });
     }
+
     
     // Add active class to nav items on scroll
     window.addEventListener('scroll', function() {
@@ -1136,7 +1261,9 @@ lightbox.addEventListener('click', (e) => {
         document.body.removeChild(lightbox);
     }
 });
+
 }
+
 
 </script>
 </body>
