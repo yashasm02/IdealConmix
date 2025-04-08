@@ -1181,44 +1181,43 @@ galleryItems.forEach(item => {
 
 
 function openLightbox(imgSrc, caption) {
-// Create lightbox elements
-const lightbox = document.createElement('div');
-lightbox.className = 'lightbox';
+    // Create lightbox elements
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
 
-const lightboxContent = document.createElement('div');
-lightboxContent.className = 'lightbox-content';
+    const lightboxContent = document.createElement('div');
+    lightboxContent.className = 'lightbox-content';
 
-const img = document.createElement('img');
-img.src = imgSrc;
+    const img = document.createElement('img');
+    img.src = imgSrc;
 
-const captionElement = document.createElement('div');
-captionElement.className = 'lightbox-caption';
-captionElement.textContent = caption;
+    const captionElement = document.createElement('div');
+    captionElement.className = 'lightbox-caption';
+    captionElement.textContent = caption;
 
-const closeBtn = document.createElement('span');
-closeBtn.className = 'lightbox-close';
-closeBtn.innerHTML = '&times;';
+    const closeBtn = document.createElement('span');
+    closeBtn.className = 'lightbox-close';
+    closeBtn.innerHTML = '&times;';
 
-// Append elements
-lightboxContent.appendChild(closeBtn);
-lightboxContent.appendChild(img);
-lightboxContent.appendChild(captionElement);
-lightbox.appendChild(lightboxContent);
-document.body.appendChild(lightbox);
+    // Append elements
+    lightboxContent.appendChild(closeBtn);
+    lightboxContent.appendChild(img);
+    lightboxContent.appendChild(captionElement);
+    lightbox.appendChild(lightboxContent);
+    document.body.appendChild(lightbox);
 
-// Add close functionality
-closeBtn.addEventListener('click', () => {
-    document.body.removeChild(lightbox);
-});
-
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
+    // Add close functionality
+    closeBtn.addEventListener('click', () => {
         document.body.removeChild(lightbox);
-    }
-});
+    });
 
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            document.body.removeChild(lightbox);
+        }
+    });
 }
-]
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
